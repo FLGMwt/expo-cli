@@ -13,6 +13,7 @@ module.exports = function(babelRoot, { pathsToInclude = [], ...options } = {}) {
   const modules = [...includeModulesThatContainPaths, ...pathsToInclude];
   return {
     test: /\.jsx?$/,
+    test: /\.(t|j)sx?$/,
     include(inputPath) {
       for (const option of modules) {
         if (inputPath.includes(option)) {
